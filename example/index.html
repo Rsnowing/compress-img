@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试压缩</title>
+</head>
+<body>
+  <input type="file" placeholder="图片上传" id="upload" accept="image/*" onchange="handleChange(event)" />
+  <img src="" alt="" id="preview">
+  <script src="../dist/compress.min.js"></script>
+  <script>
+    async function handleChange(event) {
+      const lrz = new Compress()
+      let res = await lrz.core(event.target.files[0])
+      console.log(res);
+      document.querySelector('#preview').setAttribute('src', res.base64)
+    }
+  </script>
+</body>
+</html>
