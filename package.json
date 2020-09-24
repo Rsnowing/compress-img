@@ -1,15 +1,19 @@
 {
-  "name": "@anxin/compress",
-  "version": "0.0.1",
+  "name": "for-compress",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/compress.min.js",
   "scripts": {
     "build": "cross-env ENV=production rollup -c",
     "dev": "cross-env ENV=development rollup -c -w",
-    "iife": "cross-env ENV=development FMT=iife rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "图片压缩"
+  ],
+  "files": [
+    "dist/compress.min.js"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
