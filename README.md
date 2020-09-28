@@ -16,17 +16,21 @@ npm i for-compress
 ```
 ### 页面使用
 ```
- <input type="file" placeholder="图片上传" id="upload" accept="image/*" />
+  // html
+ <input type="file" placeholder="图片上传" id="upload" accept="image/*" onchange="handleChange(event)" />
 
-  import Compress from 'for-compress
-  document.getElementById('upload').addEventListener('change', event => {
+  // js
+  import Compress from 'for-compress'
+ 
+  async function handleChange(event) {
     new Compress(event.target.files[0], {
       success: res => {
-          console.log(res);
-        },
-        fail: err => {
-          console.log(err);
-        }
+        console.log(res);
+        document.querySelector('#preview').setAttribute('src', res.blobUrl)
+      },
+      fail: err => {
+        console.log(err);
+      }
     })
-  })
+  }
 ```
